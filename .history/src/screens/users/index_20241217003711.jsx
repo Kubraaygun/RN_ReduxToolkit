@@ -9,7 +9,7 @@ const Users = () => {
   const {title} = useSelector(state => state.users);
   return (
     <View style={defaultScreenStyle.container}>
-      <Text>{title}</Text>
+      <Text>Users</Text>
     </View>
   );
 };
