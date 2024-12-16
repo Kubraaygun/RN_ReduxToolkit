@@ -12,7 +12,7 @@ const Users = () => {
     <View style={defaultScreenStyle.container}>
       <FlatList
         data={users}
-        renderItem={({item}) => <UserCard user={item} />}
+        renderItem={({item}) => <UserCard item={item} />}
       />
     </View>
   );

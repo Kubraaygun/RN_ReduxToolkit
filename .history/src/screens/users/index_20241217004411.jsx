@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import defaultScreenStyle from '../../styles/defaultScreenStyle';
 import {useSelector} from 'react-redux';
-import UserCard from '../../components/users/usersCard';
 
 // create a component
 const Users = () => {
@@ -12,7 +11,7 @@ const Users = () => {
     <View style={defaultScreenStyle.container}>
       <FlatList
         data={users}
-        renderItem={({item}) => <UserCard user={item} />}
+        renderItem={({item}) => <Text>{item.name}</Text>}
       />
     </View>
   );

@@ -9,8 +9,6 @@ const initialState = {
       address: 'Istanbul/Kadikoy',
       phone: '55 5 32324',
       email: 'test@test.com',
-      profilImage: '',
-      gender: 'Kadin',
     },
   ],
 };
