@@ -13,7 +13,7 @@ const initialState = {
       gender: 'Kadin',
     },
     {
-      id: 2,
+      id: 1,
       name: 'Ahmet',
       surname: 'Siyah',
       age: 24,

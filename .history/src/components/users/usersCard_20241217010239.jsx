@@ -1,14 +1,13 @@
 //import liraries
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {compareName, getInitialNameSurname} from '../../utils/function';
 import ThemeColors from '../../theme/themeColors';
-import {ArrowRight} from 'iconsax-react-native';
 
 // create a component
 const UserCard = ({user}) => {
   return (
-    <Pressable style={styles.container}>
+    <View style={styles.container}>
       <View>
         <View
           style={{
@@ -30,7 +29,7 @@ const UserCard = ({user}) => {
         </View>
       </View>
 
-      <View style={{padding: 10, flex: 1}}>
+      <View style={{padding: 10}}>
         <Text
           style={{
             fontSize: 18,
@@ -48,11 +47,7 @@ const UserCard = ({user}) => {
           {user.email}
         </Text>
       </View>
-
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <ArrowRight size={25} color={ThemeColors.GRAY} />
-      </View>
-    </Pressable>
+    </View>
   );
 };
 

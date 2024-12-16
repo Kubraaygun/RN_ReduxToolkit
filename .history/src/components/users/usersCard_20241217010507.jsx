@@ -1,6 +1,6 @@
 //import liraries
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {compareName, getInitialNameSurname} from '../../utils/function';
 import ThemeColors from '../../theme/themeColors';
 import {ArrowRight} from 'iconsax-react-native';
@@ -8,7 +8,7 @@ import {ArrowRight} from 'iconsax-react-native';
 // create a component
 const UserCard = ({user}) => {
   return (
-    <Pressable style={styles.container}>
+    <View style={styles.container}>
       <View>
         <View
           style={{
@@ -52,7 +52,7 @@ const UserCard = ({user}) => {
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <ArrowRight size={25} color={ThemeColors.GRAY} />
       </View>
-    </Pressable>
+    </View>
   );
 };
 
