@@ -9,7 +9,6 @@ import {
 } from '../../utils/function';
 import ThemeColors from '../../theme/themeColors';
 import {Calendar, Call, Harmony, Man, Sms, Woman} from 'iconsax-react-native';
-import Button from '../../components/ui/button';
 
 // create a component
 const UserDetail = ({route}) => {
@@ -101,9 +100,9 @@ const UserDetail = ({route}) => {
             </Text>
           </View>
         </View>
-        <View style={{marginTop: 30}}>
-          <Button title="Delete" status="warning" />
-          <Button title="Update User" status="info" />
+        <View>
+          <Button />
+          <Button />
         </View>
       </ScrollView>
     </View>

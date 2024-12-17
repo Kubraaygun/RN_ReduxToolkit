@@ -101,7 +101,7 @@ const UserDetail = ({route}) => {
             </Text>
           </View>
         </View>
-        <View style={{marginTop: 30}}>
+        <View>
           <Button title="Delete" status="warning" />
           <Button title="Update User" status="info" />
         </View>

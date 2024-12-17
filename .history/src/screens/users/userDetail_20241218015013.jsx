@@ -8,8 +8,7 @@ import {
   getRandomColor,
 } from '../../utils/function';
 import ThemeColors from '../../theme/themeColors';
-import {Calendar, Call, Harmony, Man, Sms, Woman} from 'iconsax-react-native';
-import Button from '../../components/ui/button';
+import {Sms} from 'iconsax-react-native';
 
 // create a component
 const UserDetail = ({route}) => {
@@ -53,57 +52,10 @@ const UserDetail = ({route}) => {
           </Text>
         </View>
         <View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginVertical: 20,
-            }}>
+          <View style={{flexDirection: 'row'}}>
             <Sms />
-            <Text style={{fontSize: 18, fontWeight: '500', marginLeft: 15}}>
-              {user.email}
-            </Text>
+            <Text>{user.email}</Text>
           </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginVertical: 20,
-            }}>
-            <Call />
-            <Text style={{fontSize: 18, fontWeight: '500', marginLeft: 15}}>
-              {user.phoneNumber}
-            </Text>
-          </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginVertical: 20,
-            }}>
-            {user.gender == 'Erkek' ? <Man /> : <Woman />}
-            <Text style={{fontSize: 18, fontWeight: '500', marginLeft: 15}}>
-              {user.gender}
-            </Text>
-          </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              marginVertical: 20,
-            }}>
-            <Calendar />
-            <Text style={{fontSize: 18, fontWeight: '500', marginLeft: 15}}>
-              {user.age}
-            </Text>
-          </View>
-        </View>
-        <View style={{marginTop: 30}}>
-          <Button title="Delete" status="warning" />
-          <Button title="Update User" status="info" />
         </View>
       </ScrollView>
     </View>

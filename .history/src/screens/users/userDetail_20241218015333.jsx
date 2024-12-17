@@ -8,8 +8,7 @@ import {
   getRandomColor,
 } from '../../utils/function';
 import ThemeColors from '../../theme/themeColors';
-import {Calendar, Call, Harmony, Man, Sms, Woman} from 'iconsax-react-native';
-import Button from '../../components/ui/button';
+import {Calendar, Call, Harmony, Sms} from 'iconsax-react-native';
 
 // create a component
 const UserDetail = ({route}) => {
@@ -83,7 +82,7 @@ const UserDetail = ({route}) => {
               alignItems: 'center',
               marginVertical: 20,
             }}>
-            {user.gender == 'Erkek' ? <Man /> : <Woman />}
+            <Harmony />
             <Text style={{fontSize: 18, fontWeight: '500', marginLeft: 15}}>
               {user.gender}
             </Text>
@@ -100,10 +99,6 @@ const UserDetail = ({route}) => {
               {user.age}
             </Text>
           </View>
-        </View>
-        <View style={{marginTop: 30}}>
-          <Button title="Delete" status="warning" />
-          <Button title="Update User" status="info" />
         </View>
       </ScrollView>
     </View>

@@ -17,7 +17,7 @@ const UserCard = ({user}) => {
   const navigation = useNavigation();
   return (
     <Pressable
-      onPress={() => navigation.navigate(USERDETAIL, {user: user})}
+      onPress={() => navigation.navigate(USERDETAIL)}
       style={styles.container}>
       <View>
         <View
