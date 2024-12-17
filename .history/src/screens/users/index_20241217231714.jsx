@@ -10,14 +10,10 @@ import {ADDNEWUSER} from '../../utils/routes';
 // create a component
 const Users = ({navigation}) => {
   const {users} = useSelector(state => state.users);
+  const {users} = useSelector(state => state.users);
   return (
     <View style={defaultScreenStyle.container}>
       <FlatList
-        ListEmptyComponent={
-          <Text style={{textAlign: 'center'}}>
-            Henuz Bir Kullanici Eklenmedi
-          </Text>
-        }
         data={users}
         renderItem={({item}) => <UserCard user={item} />}
       />

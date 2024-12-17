@@ -5,6 +5,5 @@ const ThemeColors = {
   GREEN: '#37d67a',
   YELLOW: '#ff8a65',
   BLUE: '#2ccce4',
-  INPUT: '#d9e3f0',
 };
 export default ThemeColors;
