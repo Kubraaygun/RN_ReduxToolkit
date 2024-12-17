@@ -16,13 +16,12 @@ const AddNewUser = () => {
     <View style={defaultScreenStyle.container}>
       <Formik
         initialValues={{
-          id: Date.now(),
-          name: '',
-          surname: '',
-          phoneNumber: '3244233234422',
+          name: 'serg',
+          surname: 'asdad',
+          phoneNumber: '3244ada3422',
+          email: 'adad@ssad',
+          gender: 'asdad',
           age: '34',
-          email: 'adassfd@ssad',
-          gender: 'erkek',
         }}
         validationSchema={newUserSchema}
         onSubmit={values => dispatch(addNewUser(values))}>

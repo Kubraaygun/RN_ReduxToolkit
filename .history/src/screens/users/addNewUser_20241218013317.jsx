@@ -16,9 +16,9 @@ const AddNewUser = () => {
     <View style={defaultScreenStyle.container}>
       <Formik
         initialValues={{
-          id: Date.now(),
-          name: '',
-          surname: '',
+          id: 1,
+          name: 'serg',
+          surname: 'asdad',
           phoneNumber: '3244233234422',
           age: '34',
           email: 'adassfd@ssad',

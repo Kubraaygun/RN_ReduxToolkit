@@ -10,6 +10,6 @@ const newUserSchema = Yup.object().shape({
     .email('Geçerli Bir E-Posta Adresi Girin')
     .required('Zorunlu Alan'),
   gender: Yup.string().required('Zorunlu Alan'),
-  age: Yup.number().min(18, 'Min 18').max(80, 'Max 80'),
+  age: Yup.string().min(18, 'Min 18').max(80, 'Max 80'),
 });
 export default newUserSchema;

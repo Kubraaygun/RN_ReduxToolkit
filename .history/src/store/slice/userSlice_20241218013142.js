@@ -1,5 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {Alert} from 'react-native';
 const initialState = {
   users: [],
 };
@@ -9,7 +8,6 @@ const userSlice = createSlice({
   reducers: {
     addNewUser: (state, action) => {
       state.users = [...state.users, action.payload];
-      Alert.alert('Kullanici basarili bir sekilde eklendi');
     },
   },
 });

@@ -2,7 +2,7 @@ import * as Yup from 'yup';
 const newUserSchema = Yup.object().shape({
   name: Yup.string().required('Zorunlu Alan'),
   surname: Yup.string().required('Zorunlu Alan'),
-  phoneNumber: Yup.string()
+  phoneNumber: Yup.number()
     .max(20, 'Max 20')
     .min(11, 'Min 11')
     .required('Zorunlu Alan'),

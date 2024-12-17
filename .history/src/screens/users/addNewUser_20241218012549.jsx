@@ -7,7 +7,6 @@ import Button from '../../components/ui/button';
 import {Formik} from 'formik';
 import newUserSchema from '../../utils/validationSchema';
 import {useDispatch} from 'react-redux';
-import {addNewUser} from '../../store/slice/userSlice';
 
 // create a component
 const AddNewUser = () => {
@@ -16,16 +15,15 @@ const AddNewUser = () => {
     <View style={defaultScreenStyle.container}>
       <Formik
         initialValues={{
-          id: Date.now(),
           name: '',
           surname: '',
-          phoneNumber: '3244233234422',
-          age: '34',
-          email: 'adassfd@ssad',
-          gender: 'erkek',
+          phoneNumber: '',
+          email: '',
+          gender: '',
+          age: '',
         }}
         validationSchema={newUserSchema}
-        onSubmit={values => dispatch(addNewUser(values))}>
+        onSubmit={values => console.log(values)}>
         {({handleChange, handleBlur, handleSubmit, values, errors}) => (
           <ScrollView>
             <Input
