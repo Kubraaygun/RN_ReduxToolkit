@@ -33,7 +33,6 @@ const AddNewUser = () => {
               placeholder="Please set name"
             />
             <Input
-              error={errors.surname}
               onChangeText={handleChange('surname')}
               onBlur={handleBlur('surname')}
               value={values.surname}
@@ -41,7 +40,6 @@ const AddNewUser = () => {
               placeholder="Please set surname"
             />
             <Input
-              error={errors.phoneNumber}
               keyboardType="phone-pad"
               onChangeText={handleChange('phoneNumber')}
               onBlur={handleBlur('phoneNumber')}
@@ -50,7 +48,6 @@ const AddNewUser = () => {
               placeholder="Please set phone number"
             />
             <Input
-              error={errors.email}
               keyboardType="email-address"
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
@@ -59,7 +56,6 @@ const AddNewUser = () => {
               placeholder="Please set E-mail"
             />
             <Input
-              error={errors.gender}
               onChangeText={handleChange('gender')}
               onBlur={handleBlur('gender')}
               value={values.gender}
@@ -67,7 +63,6 @@ const AddNewUser = () => {
               placeholder="Please set gender"
             />
             <Input
-              error={errors.age}
               keyboardType="number-pad"
               onChangeText={handleChange('age')}
               onBlur={handleBlur('age')}

@@ -5,14 +5,11 @@ import ThemeColors from '../../theme/themeColors';
 
 // create a component
 const Input = props => {
-  const {title, error} = props;
+  const {title, value, onChangeText, placeholder} = props;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
       <TextInput {...props} style={styles.input} />
-      {error && (
-        <Text style={{marginTop: 5, color: ThemeColors.RED}}>Zorunlu</Text>
-      )}
     </View>
   );
 };

@@ -10,7 +10,7 @@ import newUserSchema from '../../utils/validationSchema';
 // create a component
 const AddNewUser = () => {
   return (
-    <View style={defaultScreenStyle.container}>
+    <ScrollView style={defaultScreenStyle.container}>
       <Formik
         initialValues={{
           name: '',
@@ -22,10 +22,9 @@ const AddNewUser = () => {
         }}
         validationSchema={newUserSchema}
         onSubmit={values => console.log(values)}>
-        {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-          <ScrollView>
+        {({handleChange, handleBlur, handleSubmit, values, error}) => (
+          <View>
             <Input
-              error={errors.name}
               onChangeText={handleChange('name')}
               onBlur={handleBlur('name')}
               value={values.name}
@@ -33,7 +32,6 @@ const AddNewUser = () => {
               placeholder="Please set name"
             />
             <Input
-              error={errors.surname}
               onChangeText={handleChange('surname')}
               onBlur={handleBlur('surname')}
               value={values.surname}
@@ -41,7 +39,6 @@ const AddNewUser = () => {
               placeholder="Please set surname"
             />
             <Input
-              error={errors.phoneNumber}
               keyboardType="phone-pad"
               onChangeText={handleChange('phoneNumber')}
               onBlur={handleBlur('phoneNumber')}
@@ -50,7 +47,6 @@ const AddNewUser = () => {
               placeholder="Please set phone number"
             />
             <Input
-              error={errors.email}
               keyboardType="email-address"
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
@@ -59,7 +55,6 @@ const AddNewUser = () => {
               placeholder="Please set E-mail"
             />
             <Input
-              error={errors.gender}
               onChangeText={handleChange('gender')}
               onBlur={handleBlur('gender')}
               value={values.gender}
@@ -67,7 +62,6 @@ const AddNewUser = () => {
               placeholder="Please set gender"
             />
             <Input
-              error={errors.age}
               keyboardType="number-pad"
               onChangeText={handleChange('age')}
               onBlur={handleBlur('age')}
@@ -76,10 +70,10 @@ const AddNewUser = () => {
               placeholder="Please set age"
             />
             <Button onPress={handleSubmit} title="Save" status="success" />
-          </ScrollView>
+          </View>
         )}
       </Formik>
-    </View>
+    </ScrollView>
   );
 };
 
