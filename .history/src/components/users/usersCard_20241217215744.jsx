@@ -22,7 +22,7 @@ const UserCard = ({user}) => {
             borderRadius: 100,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: getRandomColor(),
+            backgroundColor: getRandomColor,
           }}>
           <Text
             style={{

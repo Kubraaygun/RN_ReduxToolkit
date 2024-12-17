@@ -45,17 +45,6 @@ const initialState = {
       profilImage: '',
       gender: 'Kadin',
     },
-    {
-      id: 5,
-      name: 'Ahmet',
-      surname: 'Siyah',
-      age: 24,
-      address: 'Istanbul/Kadikoy',
-      phone: '55 5 32324',
-      email: 'test@test.com',
-      profilImage: '',
-      gender: 'Kadin',
-    },
   ],
 };
 const userSlice = createSlice({

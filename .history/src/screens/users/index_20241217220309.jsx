@@ -16,7 +16,8 @@ const Users = ({navigation}) => {
         data={users}
         renderItem={({item}) => <UserCard user={item} />}
       />
-      <FloatActionButton onPress={() => navigation.navigate(ADDNEWUSER)} />
+      <FloatActionButton />
+      onPress={() => ADDNEWUSER}
     </View>
   );
 };
