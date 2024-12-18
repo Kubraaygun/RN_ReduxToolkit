@@ -1,6 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {Alert} from 'react-native';
-import {getUsers} from '../actions/userActions';
 const initialState = {
   users: [],
   pending: false,
@@ -14,20 +13,6 @@ const userSlice = createSlice({
       state.users = [...state.users, action.payload];
       Alert.alert('Kullanici basarili bir sekilde eklendi');
     },
-  },
-  extraReducers: builder => {
-    builder
-      .addCase(getUsers.pending, state => {
-        state.pending = true;
-      })
-      .addCase(getUsers.fulfilled, (state, action) => {
-        state.users = action.payload;
-        state.pending = false;
-      })
-      .addCase(getUsers.rejected, (state, action) => {
-        state.error = action.error;
-        state.pending = false;
-      });
   },
 });
 

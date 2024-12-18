@@ -26,7 +26,6 @@ const userSlice = createSlice({
       })
       .addCase(getUsers.rejected, (state, action) => {
         state.error = action.error;
-        state.pending = false;
       });
   },
 });

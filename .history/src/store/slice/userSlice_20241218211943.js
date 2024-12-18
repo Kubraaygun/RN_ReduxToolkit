@@ -20,13 +20,8 @@ const userSlice = createSlice({
       .addCase(getUsers.pending, state => {
         state.pending = true;
       })
-      .addCase(getUsers.fulfilled, (state, action) => {
-        state.users = action.payload;
-        state.pending = false;
-      })
-      .addCase(getUsers.rejected, (state, action) => {
-        state.error = action.error;
-        state.pending = false;
+      .addCase(getUsers.pending, state => {
+        state.pending = true;
       });
   },
 });
