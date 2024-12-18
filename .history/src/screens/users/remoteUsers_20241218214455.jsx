@@ -9,7 +9,7 @@ import {ADDNEWUSER} from '../../utils/routes';
 import {getUsers} from '../../store/actions/userActions';
 
 // create a component
-const Users = ({navigation}) => {
+const RemoteUsers = ({navigation}) => {
   const {users} = useSelector(state => state.users);
 
   return (
@@ -27,4 +27,4 @@ const Users = ({navigation}) => {
     </View>
   );
 };
-export default Users;
+export default RemoteUsers;

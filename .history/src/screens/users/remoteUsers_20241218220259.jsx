@@ -20,7 +20,7 @@ const RemoteUsers = ({navigation}) => {
   const {users, pending} = useSelector(state => state.users);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUsers({results: 30}));
+    dispatch(getUsers({results= "10"}));
   }, []);
   return (
     <View style={defaultScreenStyle.container}>
@@ -33,7 +33,6 @@ const RemoteUsers = ({navigation}) => {
               Henuz Bir Kullanici Eklenmedi
             </Text>
           }
-          keyExtractor={item => item.email}
           data={users}
           renderItem={({item}) => <RemoteUserCard user={item} />}
         />

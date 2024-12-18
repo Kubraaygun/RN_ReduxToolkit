@@ -20,7 +20,7 @@ const RemoteUsers = ({navigation}) => {
   const {users, pending} = useSelector(state => state.users);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUsers({results: 30}));
+    dispatch(getUsers({results: 50}));
   }, []);
   return (
     <View style={defaultScreenStyle.container}>

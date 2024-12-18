@@ -2,7 +2,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Users from '../screens/users';
 import {ADDNEWUSER, REMOTEUSERS, USERDETAIL, USERS} from '../utils/routes';
 import AddNewUser from '../screens/users/addNewUser';
+import {User} from 'iconsax-react-native';
 import UserDetail from '../screens/users/userDetail';
+import RemoteUserCard from '../components/users/remoteUserCard';
 import RemoteUsers from '../screens/users/remoteUsers';
 
 const Stack = createNativeStackNavigator();
