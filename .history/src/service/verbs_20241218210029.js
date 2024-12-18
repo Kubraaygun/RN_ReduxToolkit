@@ -15,12 +15,17 @@ export async function patchRequest(URL, payload) {
   return response;
 }
 
-export async function putRequest(URL, payload) {
-  const response = await Client.put(URL, payload);
+export async function putRequest(URL, params) {
+  const response = await Client.get(URL, {params: params});
   return response;
 }
 
-export async function deleteRequest(URL, payload) {
-  const response = await Client.delete(URL, payload);
+export async function getRequest(URL, params) {
+  const response = await Client.get(URL, {params: params});
+  return response;
+}
+
+export async function getRequest(URL, params) {
+  const response = await Client.get(URL, {params: params});
   return response;
 }

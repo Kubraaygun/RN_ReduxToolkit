@@ -6,4 +6,3 @@ Client.defaults.headers = {
   acceps: 'application/json',
   'Content-Type': 'application/json',
 };
-export default Client;
