@@ -4,13 +4,21 @@ import {ADDNEWUSER, REMOTEUSERS, USERDETAIL, USERS} from '../utils/routes';
 import AddNewUser from '../screens/users/addNewUser';
 import UserDetail from '../screens/users/userDetail';
 import RemoteUsers from '../screens/users/remoteUsers';
-import ThemeColors from '../theme/themeColors';
 
 const Stack = createNativeStackNavigator();
 
 function RootNavigation() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#3498db', // Arka plan rengi
+        },
+        headerTintColor: '#fff', // Yazı rengi
+        headerTitleStyle: {
+          fontWeight: 'bold', // Yazı stili
+        },
+      }}>
       <Stack.Screen name={REMOTEUSERS} component={RemoteUsers} />
       <Stack.Screen name={USERS} component={Users} />
       <Stack.Screen name={ADDNEWUSER} component={AddNewUser} />

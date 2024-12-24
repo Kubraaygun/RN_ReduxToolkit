@@ -10,7 +10,16 @@ const Stack = createNativeStackNavigator();
 
 function RootNavigation() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: ThemeColors.GREEN, // Arka plan rengi
+        },
+        headerTintColor: '#fff', // Yazı rengi
+        headerTitleStyle: {
+          fontWeight: 'bold', // Yazı stili
+        },
+      }}>
       <Stack.Screen name={REMOTEUSERS} component={RemoteUsers} />
       <Stack.Screen name={USERS} component={Users} />
       <Stack.Screen name={ADDNEWUSER} component={AddNewUser} />

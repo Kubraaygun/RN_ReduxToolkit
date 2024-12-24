@@ -4,7 +4,6 @@ import {ADDNEWUSER, REMOTEUSERS, USERDETAIL, USERS} from '../utils/routes';
 import AddNewUser from '../screens/users/addNewUser';
 import UserDetail from '../screens/users/userDetail';
 import RemoteUsers from '../screens/users/remoteUsers';
-import ThemeColors from '../theme/themeColors';
 
 const Stack = createNativeStackNavigator();
 
