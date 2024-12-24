@@ -42,7 +42,7 @@ const UserDetail = ({route}) => {
               }}>
               {getInitialNameSurname(
                 user?.name.first || user?.name,
-                user?.name.last || user?.surname,
+                user?.name?.last || user.surname,
               )}
             </Text>
           </View>

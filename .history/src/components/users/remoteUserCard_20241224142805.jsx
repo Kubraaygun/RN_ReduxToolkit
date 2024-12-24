@@ -1,6 +1,6 @@
 //import liraries
-import React, {Component} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import React from 'react';
+import {View, Text, StyleSheet, Pressable, Image} from 'react-native';
 import {
   compareName,
   getInitialNameSurname,
@@ -9,35 +9,47 @@ import {
 import ThemeColors from '../../theme/themeColors';
 import {ArrowRight} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
-import UserDetail from '../../screens/users/userDetail';
 import {USERDETAIL} from '../../utils/routes';
 
 // create a component
-const UserCard = ({user}) => {
+const RemoteUserCard = ({user}) => {
+  console.log(user);
   const navigation = useNavigation();
   return (
     <Pressable
       onPress={() => navigation.navigate(USERDETAIL, {user: user})}
       style={styles.container}>
       <View>
-        <View
-          style={{
-            width: 70,
-            height: 70,
-            borderWidth: 1,
-            borderRadius: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: getRandomColor(),
-          }}>
-          <Text
+        {user?.picture?.medium ? (
+          <Image
+            source={{uri: user?.picture?.medium}}
             style={{
-              fontSize: 20,
-              fontWeight: 'bold',
+              width: 70,
+              height: 70,
+              borderRadius: 100,
+              resizeMode: 'container',
+            }}
+          />
+        ) : (
+          <View
+            style={{
+              width: 70,
+              height: 70,
+              borderWidth: 1,
+              borderRadius: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: getRandomColor(),
             }}>
-            {getInitialNameSurname(user?.name, user.surname)}
-          </Text>
-        </View>
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: 'bold',
+              }}>
+              {getInitialNameSurname(user?.name.first, user?.name?.last)}
+            </Text>
+          </View>
+        )}
       </View>
 
       <View style={{padding: 10, flex: 1}}>
@@ -47,7 +59,7 @@ const UserCard = ({user}) => {
             fontWeight: '500',
           }}>
           {' '}
-          {compareName(user?.name, user?.surname)}
+          {compareName(user?.name.first, user?.name?.last)}
         </Text>
         <Text
           style={{
@@ -79,4 +91,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default UserCard;
+export default RemoteUserCard;

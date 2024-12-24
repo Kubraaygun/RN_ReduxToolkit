@@ -10,19 +10,19 @@ import {useDispatch} from 'react-redux';
 import {addNewUser} from '../../store/slice/userSlice';
 
 // create a component
-const AddNewUser = () => {
+const AddNewUser = ({navigation}) => {
   const dispatch = useDispatch();
   return (
     <View style={defaultScreenStyle.container}>
       <Formik
         initialValues={{
           id: Date.now(),
-          name: 'ee',
-          surname: 'aaaa',
-          phoneNumber: '33343434343434',
-          age: '43',
-          email: 'ada@feef',
-          gender: 'adad',
+          name: 'asil',
+          surname: 'adsad',
+          phoneNumber: '111 222 333',
+          age: '34',
+          email: 'emailaa@email.com',
+          gender: 'Kadin',
         }}
         validationSchema={newUserSchema}
         onSubmit={values => dispatch(addNewUser(values))}>

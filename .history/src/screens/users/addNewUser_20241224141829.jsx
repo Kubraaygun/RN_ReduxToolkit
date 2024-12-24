@@ -1,31 +1,33 @@
-//import liraries
 import React from 'react';
-import {View, ScrollView} from 'react-native';
-import defaultScreenStyle from '../../styles/defaultScreenStyle';
-import Input from '../../components/ui/input';
-import Button from '../../components/ui/button';
+import {ScrollView, View} from 'react-native';
+import {defaultScreenStyle} from '../../styles/defaultScreenStyle';
+import {Input} from '../../components/UI/input';
+import Button from '../../components/UI/button';
 import {Formik} from 'formik';
-import newUserSchema from '../../utils/validationSchema';
+import {newUserSchema} from '../../utils/validation';
 import {useDispatch} from 'react-redux';
 import {addNewUser} from '../../store/slice/userSlice';
+import {USERS} from '../../utils/routes';
 
-// create a component
-const AddNewUser = () => {
+const AddNewUser = ({navigation}) => {
   const dispatch = useDispatch();
   return (
     <View style={defaultScreenStyle.container}>
       <Formik
         initialValues={{
           id: Date.now(),
-          name: 'ee',
-          surname: 'aaaa',
-          phoneNumber: '33343434343434',
-          age: '43',
-          email: 'ada@feef',
-          gender: 'adad',
+          name: '',
+          surname: '',
+          phoneNumber: '',
+          email: '',
+          gender: '',
+          age: '',
         }}
         validationSchema={newUserSchema}
-        onSubmit={values => dispatch(addNewUser(values))}>
+        onSubmit={values => {
+          dispatch(addNewUser(values));
+          navigation.navigate(USERS);
+        }}>
         {({handleChange, handleBlur, handleSubmit, values, errors}) => (
           <ScrollView>
             <Input
@@ -33,25 +35,16 @@ const AddNewUser = () => {
               onChangeText={handleChange('name')}
               onBlur={handleBlur('name')}
               value={values.name}
-              title="name"
+              title="Name"
               placeholder="Please set name"
             />
             <Input
               error={errors.surname}
               onChangeText={handleChange('surname')}
               onBlur={handleBlur('surname')}
-              value={values.surname}
-              title="surname"
-              placeholder="Please set surname"
-            />
-            <Input
-              error={errors.phoneNumber}
-              keyboardType="phone-pad"
-              onChangeText={handleChange('phoneNumber')}
-              onBlur={handleBlur('phoneNumber')}
-              value={values.phoneNumber}
-              title="Phone Number"
-              placeholder="Please set phone number"
+              value={values.surnamename}
+              title="Surname"
+              placeholder="Please set Surname"
             />
             <Input
               error={errors.email}
@@ -59,8 +52,19 @@ const AddNewUser = () => {
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               value={values.email}
-              title="E-mail"
-              placeholder="Please set E-mail"
+              title="Email"
+              placeholder="Please set email"
+              key="e-mail"
+            />
+            <Input
+              error={errors.phoneNumber}
+              keyboardType="phone-pad"
+              onChangeText={handleChange('phoneNumber')}
+              onBlur={handleBlur('phoneNumber')}
+              value={values.phoneNumber}
+              title="Phone number"
+              placeholder="Please set phone number"
+              key="phone-Number"
             />
             <Input
               error={errors.gender}
@@ -72,7 +76,6 @@ const AddNewUser = () => {
             />
             <Input
               error={errors.age}
-              keyboardType="number-pad"
               onChangeText={handleChange('age')}
               onBlur={handleBlur('age')}
               value={values.age}

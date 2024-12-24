@@ -35,7 +35,7 @@ const UserCard = ({user}) => {
               fontSize: 20,
               fontWeight: 'bold',
             }}>
-            {getInitialNameSurname(user?.name, user.surname)}
+            {getInitialNameSurname(user?.name, user?.surname)}
           </Text>
         </View>
       </View>

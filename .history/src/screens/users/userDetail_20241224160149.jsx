@@ -40,10 +40,7 @@ const UserDetail = ({route}) => {
                 fontSize: 20,
                 fontWeight: 'bold',
               }}>
-              {getInitialNameSurname(
-                user?.name.first || user?.name,
-                user?.name.last || user?.surname,
-              )}
+              {getInitialNameSurname(user.name.first, user.surname.last)}
             </Text>
           </View>
           <Text
@@ -52,10 +49,7 @@ const UserDetail = ({route}) => {
               fontWeight: 'bold',
               marginTop: 10,
             }}>
-            {compareName(
-              user?.name.first || user?.name,
-              user?.name.last || user?.surname,
-            )}
+            {compareName(user.name.first, user.surname)}
           </Text>
         </View>
         <View>

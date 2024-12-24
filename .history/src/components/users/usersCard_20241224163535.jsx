@@ -35,7 +35,10 @@ const UserCard = ({user}) => {
               fontSize: 20,
               fontWeight: 'bold',
             }}>
-            {getInitialNameSurname(user?.name, user.surname)}
+            {getInitialNameSurname(
+              user?.name.first || user?.name,
+              user?.name?.last || user?.surname,
+            )}
           </Text>
         </View>
       </View>
@@ -47,7 +50,10 @@ const UserCard = ({user}) => {
             fontWeight: '500',
           }}>
           {' '}
-          {compareName(user?.name, user?.surname)}
+          {compareName(
+            user?.name.first || user?.name,
+            user?.name?.last || user.surname,
+          )}
         </Text>
         <Text
           style={{
